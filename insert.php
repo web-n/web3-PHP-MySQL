@@ -4,5 +4,16 @@
 // $row = mysqli_fetch_assoc($res);
 // echo $row['_msg'];
 
-mysqli_connect("localhost", "root", "111111", "opentutorials");
+$conn = mysqli_connect("localhost", "root", "111111", "opentutorials");
+mysqli_query($conn, "
+	INSERT INTO topic (
+		title,
+		description,
+		created
+	) VALUES (
+		'MySQL',
+		'MySQL is ....',
+		NOW()
+	)");
+
 ?>
